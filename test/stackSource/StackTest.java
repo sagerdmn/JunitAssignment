@@ -28,13 +28,17 @@ public class StackTest extends Stack{
     }
 
     @Test
-    public void testSomeMethod() {
+    public void testSomeMethod() throws EmptyStackException {
         // TODO review the generated test code and remove the default call to fail.
         int capacity = 5;
-        int[] arr1 = Stack();
-        assertEquals(arr1.length, 20);
-        int[] arr2 = Stack(capacity);
-        assertEquals(arr2.length, capacity);
+        //default stack constructor
+        Stack stack1 = new Stack();
+        assertEquals(Stack.arr.size(), 20);
+        //parameterized stack
+        Stack stack2 = new Stack(capacity);
+        assertEquals(Stack.arr.size(), capacity);
+        //check for accuracy of returned value
+        assertEquals(stack1.pop(),stack1.arr.get(0).number);
         
         
     }
