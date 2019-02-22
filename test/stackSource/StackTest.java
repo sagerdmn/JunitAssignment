@@ -28,7 +28,7 @@ public class StackTest extends Stack{
     }
 
     @Test
-    public void testSomeMethod() throws EmptyStackException {
+    public void testSomeMethod() throws EmptyStackException, FullStackException {
         // TODO review the generated test code and remove the default call to fail.
         int capacity = 5;
         //default stack constructor
@@ -43,6 +43,10 @@ public class StackTest extends Stack{
         assertEquals(stack1.peek(),stack1.arr.get(0).number);
         //testing empty()
         assertEquals(stack1.empty(), false);
+        //testing push
+        Item test = new Item(3);
+        stack1.push(test);
+        assertEquals(stack1.peek(), 3);
         
     }
     

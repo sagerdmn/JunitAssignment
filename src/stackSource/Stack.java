@@ -56,6 +56,16 @@ public class Stack {
         return temp;
         }  
     }
+    
+    //push() method
+    public void push(Item e)throws FullStackException{
+        if(arr.size()==capacity){
+             throw new FullStackException();
+        }
+        else {
+            arr.add(0,e);
+        }
+    }
 
     public static void main(String[] args){
         Stack joe = new Stack();
