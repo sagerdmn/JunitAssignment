@@ -5,7 +5,8 @@ import java.util.ArrayList;
 
 public class Stack {
     static ArrayList<Item> arr = new ArrayList<>();
-    
+    int capacity;
+    //Stack default constructor
     public Stack(){
      arr = new ArrayList<>();
      for(int i=0; i<20; i++){
@@ -13,31 +14,51 @@ public class Stack {
      }
      
     }
-    
+    //Stack parameterized constructor
     public Stack(int capacity){
-     arr = new ArrayList<>();
-     for(int i=0; i<capacity; i++){
-         arr.add(new Item());
-     }
+        this.capacity = capacity;
+        arr = new ArrayList<>();
+        for(int i=0; i<capacity; i++){
+            arr.add(new Item());
+        }
     }
     
+    //// METHODS ////
+    
+    public boolean empty(){
+       if(arr.size()<=0){
+             return true;
+        }
+        else {
+           return false;
+       }
+    }
+    
+    //pop() method
     public int pop() throws EmptyStackException{
-        if(arr.size()<=0){
+        if(empty()){
              throw new EmptyStackException();
         }
         else {
         int temp = arr.get(0).number;
         arr.remove(0);
         return temp;
-        
-        } 
-        
+        }  
     }
     
+    //peek() method
+    public int peek() throws EmptyStackException{
+        if(empty()){
+             throw new EmptyStackException();
+        }
+        else {
+        int temp = arr.get(0).number;
+        return temp;
+        }  
+    }
+
     public static void main(String[] args){
         Stack joe = new Stack();
-        for(int i=0; i<joe.arr.size(); i++){
-            System.out.println(arr.get(i).number);
-        }
+        System.out.print(joe.empty());
     }
 }

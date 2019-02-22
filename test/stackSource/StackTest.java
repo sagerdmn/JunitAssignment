@@ -37,9 +37,12 @@ public class StackTest extends Stack{
         //parameterized stack
         Stack stack2 = new Stack(capacity);
         assertEquals(Stack.arr.size(), capacity);
-        //check for accuracy of returned value
+        //check for accuracy of returned value for pop()
         assertEquals(stack1.pop(),stack1.arr.get(0).number);
-        
+        //check for accuracy of returned value for peek()
+        assertEquals(stack1.peek(),stack1.arr.get(0).number);
+        //testing empty()
+        assertEquals(stack1.empty(), false);
         
     }
     
